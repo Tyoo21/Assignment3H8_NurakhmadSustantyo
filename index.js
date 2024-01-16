@@ -60,7 +60,6 @@ function arrSum(arr){
     let current = arr[0]
     let start = 0
     let end = 0
-    let startIdx = 0
 
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] > max + arr[i]) {
@@ -79,6 +78,5 @@ function arrSum(arr){
     let subarray = arr.slice(start, end + 1)
     return [subarray, current]
 }
-
 
 console.log(arrSum([-2, -3, 5, -4, -1, 1, 6, -6]))
