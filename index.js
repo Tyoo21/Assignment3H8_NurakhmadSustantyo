@@ -21,23 +21,12 @@ console.log(isArithmeticProgression(deret3), "===> Exercise 1");
 
 // Exercise 2
 function threeStepAB(text){
-    const idxA = text.indexOf('a')
-    const idxB = text.indexOf('b', idxA + 1)
-
-    if (idxA !== -1 && idxB !== -1 && idxB - idxA >= 3){
-        return true
-    } else{
-        return false
-    }
+    return /a...b|b...a/.test(text)
 }
 
-const text1 ="beli bakso"
-const text2 ="baca buku"
-const text3 ="baca"
-
-console.log(threeStepAB(text1), "===> Exercise 2");
-console.log(threeStepAB(text2), "===> Exercise 2");
-console.log(threeStepAB(text3), "===> Exercise 2");
+console.log(threeStepAB("i am sick"), "===> Exercise 2 text 1");
+console.log(threeStepAB("you are boring"), "===> Exercise 2 text 2");
+console.log(threeStepAB("barbarian"), "===> Exercise 2 text 3");
 
 
 // Exercise 3
@@ -58,11 +47,11 @@ function sumArray(arr, int){
     return result
 }
 
-// const inputArray = [4, 5, 3, 2]
-// const intSum = 7
+const inputArray = [8, 6, 2, 4]
+const intSum = 10
 
-// const resultArray = sumArray(inputArray, intSum)
-// console.log(resultArray, "===> Exercise 3");
+const resultArray = sumArray(inputArray, intSum)
+console.log(resultArray, "===> Exercise 3");
 
 
 // Exercise 4
@@ -92,8 +81,8 @@ function arrSum(arr){
     return [maxSubArray, max]
 }
 
-const inputArray = [-2, -3, 5, -4, -1, 1, 6, -6]
-const [maxSubArray, max] = arrSum(inputArray)
+// const inputArray = [-2, -3, 5, -4, -1, 1, 6, -6]
+// const [maxSubArray, max] = arrSum(inputArray)
 
-console.log("Sub Array: ", maxSubArray);
-console.log("Sum: ", max);
+// console.log("Sub Array: ", maxSubArray);
+// console.log("Sum: ", max);
