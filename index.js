@@ -56,33 +56,29 @@ console.log(resultArray, "===> Exercise 3");
 
 // Exercise 4
 function arrSum(arr){
-    let max = Number.NEGATIVE_INFINITY
-    let current = 0
+    let max = arr[0]
+    let current = arr[0]
     let start = 0
     let end = 0
     let startIdx = 0
 
     for (let i = 0; i < arr.length; i++) {
-        current += arr[i]
-
-        if(current > max){
-            max = current
-            start = startIdx
-            end = i
+        if (arr[i] > max + arr[i]) {
+            max = arr[i]
+            tempStart = i
+        } else {
+            max += arr [i]
         }
-
-        if(current < 0){
-            current = 0
-            startIdx = i + 1
+        if (max > current) {
+            current = max
+            start = tempStart
+            end = i
         }
     }
 
-    const maxSubArray = arr.slice(start, end + 1)
-    return [maxSubArray, max]
+    let subarray = arr.slice(start, end + 1)
+    return [subarray, current]
 }
 
-// const inputArray = [-2, -3, 5, -4, -1, 1, 6, -6]
-// const [maxSubArray, max] = arrSum(inputArray)
 
-// console.log("Sub Array: ", maxSubArray);
-// console.log("Sum: ", max);
+console.log(arrSum([-2, -3, 5, -4, -1, 1, 6, -6]))
